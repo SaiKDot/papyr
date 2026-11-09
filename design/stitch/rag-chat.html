@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#46464b", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#1b1b1f", "tertiary-fixed": "#e3e1ef", "surface-variant": "#e3e2df", "primary-fixed": "#e3e2e6", "on-secondary-fixed": "#0c006b", "inverse-on-surface": "#f2f1ed", "on-error": "#ffffff", "on-secondary-container": "#fffbff", "on-background": "#1b1c1a", "tertiary-container": "#1a1b25", "secondary-fixed": "#e2dfff", "surface": "#faf9f5", "on-tertiary-container": "#83838f", "secondary-container": "#6462ec", "on-secondary-fixed-variant": "#332dbc", "surface-bright": "#faf9f5", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#464651", "background": "#faf9f5", "on-tertiary": "#ffffff", "inverse-surface": "#30312e", "error": "#ba1a1a", "on-tertiary-fixed": "#1a1b25", "outline": "#76777b", "on-surface": "#1b1c1a", "surface-container": "#efeeea", "surface-container-high": "#e9e8e4", "tertiary-fixed-dim": "#c7c5d3", "surface-container-low": "#f5f4f0", "on-primary-container": "#848387", "on-error-container": "#93000a", "inverse-primary": "#c7c6ca", "error-container": "#ffdad6", "surface-container-highest": "#e3e2df", "tertiary": "#000000", "on-primary-fixed-variant": "#46464a", "primary-fixed-dim": "#c7c6ca", "primary-container": "#1b1b1f", "on-primary": "#ffffff", "surface-tint": "#5e5e62", "surface-dim": "#dbdad6", "primary": "#000000", "secondary": "#4a47d2", "secondary-fixed-dim": "#c2c1ff", "outline-variant": "#c7c6cb" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1rem", "space-xl": "2.5rem", "gutter-tablet": "1.5rem", "gutter-desktop": "2rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem" }, "fontFamily": { "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="DocuMind Minimal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAfPWKYvjBPc5eOqKWVlYzUTbFm5hllVHxoBzPNfXnH_0gHIDLQ_kjwD907KcFrEowF1OOK-tLn3um3mKgzoVMo2lg9tCYrm3wOX1FDdoKWRK3Zk1UPO2F2VIjDUQnDY2miMquO8ntui0Jef5i9g9UIhnP4LtFUi9Ceyl95dAynLD0fy7svhfYD2V1PwQ3i7zr-gWcwXWCnhAh4f8bKAuOdtyjcKCtEibcOOZmNbiqaUA"/><div class="flex items-baseline gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Papyr</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline-block">/ Chat &amp; Ask</span></div></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">RAG Active</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Active Corpus Scope Bar -->
+<div class="px-margin py-space-sm bg-surface-container-low/80 backdrop-blur-md sticky top-0 z-30 flex items-center justify-between">
+<button class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-all text-left" id="scope-toggle-btn">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm">3 PDFs Active</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">84 Chunks</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-0.5">expand_more</span>
+</button>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm active:scale-90 transition-transform" id="rag-tuning-btn" title="Retriever Config">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm active:scale-90 transition-transform" id="clear-chat-btn" title="Clear History">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Scope Drawer Modal (Hidden by Default) -->
+<div class="hidden mx-margin my-space-sm p-space-md bg-surface-container-lowest rounded-lg shadow-md transition-all" id="scope-drawer">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">library_books</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Grounding Source Corpus</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" id="scope-drawer-close">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Q3_Financial_Summary.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">34pg · 92% rel</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">15pg · 88% rel</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">SaaS_Enterprise_Metrics_2024.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">48pg · 54% rel</span>
+</div>
+</div>
+</div>
+<!-- Conversation Timeline Stream -->
+<div class="flex flex-col gap-space-lg px-margin pt-space-md pb-6" id="chat-stream">
+<!-- Turn 1: User Prompt -->
+<div class="flex justify-end pl-8">
+<div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+<p class="font-body-md text-body-md leading-relaxed">
+          What were the primary revenue drivers in Q3 according to the report?
+        </p>
+<div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+<span class="font-label-sm text-label-sm text-on-primary">10:42 AM</span>
+<span class="material-symbols-outlined text-[13px] text-on-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Turn 1: RAG Assistant Response -->
+<div class="flex flex-col gap-space-sm pr-2">
+<!-- Agent Metadata Tag -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">· 2 sources grounded</span>
+</div>
+<!-- Main Synthesis Content Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+          According to <button class="inline-flex items-baseline px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-medium hover:bg-secondary hover:text-on-secondary transition-colors" onclick="openInspector('chunk-1')">Q3_Financial_Summary.pdf (Page 4)</button>, the primary revenue growth was driven by enterprise subscription renewals (<strong class="font-semibold text-primary">up 34% YoY</strong>) and cross-selling AI add-on tiers to installed customers.
+        </p>
+<!-- Provenance Vector & Citations Section -->
+<div class="pt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">database</span>
+              Grounding Citations
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cosine Top-K</span>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- Citation 1: High Similarity -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm active:scale-[0.99]" id="citation-card-1" onclick="toggleChunkPeek('chunk-1')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 font-bold">1</span>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Q3_Financial_Summary.pdf</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Section 4.1 · Page 4</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">92% Match</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-secondary transition-colors">visibility</span>
+</div>
+</div>
+<!-- Collapsible Chunk Excerpt -->
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-1">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EMBEDDING VECTOR CHUNK #1084</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tokens: 142</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                  "...enterprise ARR crossed $42.1M driven by high net dollar retention (124%), predominantly propelled by tier migration toward autonomous intelligence licenses..."
+                </p>
+</div>
+</div>
+<!-- Citation 2: Cross Reference -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm active:scale-[0.99]" id="citation-card-2" onclick="toggleChunkPeek('chunk-2')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">2</span>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Background § Page 2</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">64% Match</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-secondary transition-colors">visibility</span>
+</div>
+</div>
+<!-- Collapsible Chunk Excerpt -->
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-2">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EMBEDDING VECTOR CHUNK #0492</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tokens: 98</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                  "...recurrent models typically factor computation along the symbol positions of the input and output sequences..."
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Latency & Model Diagnostic Footer -->
+<div class="flex items-center justify-between pt-2 text-on-surface-variant">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span>Hybrid Dense Search</span>
+<span>·</span>
+<span>340ms latency</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform" title="Copy Answer">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform" title="Good Response">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Divider with Document Context Reference -->
+<div class="relative py-1">
+<div class="flex items-center justify-center">
+<span class="bg-surface-container px-space-md py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">sync_alt</span>
+          Switched Attention Context: <strong>Attention_Is_All_You_Need.pdf</strong>
+</span>
+</div>
+</div>
+<!-- Turn 2: User Prompt -->
+<div class="flex justify-end pl-8">
+<div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+<p class="font-body-md text-body-md leading-relaxed">
+          Can you summarize how self-attention works based on the paper?
+        </p>
+<div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+<span class="font-label-sm text-label-sm text-on-primary">10:44 AM</span>
+<span class="material-symbols-outlined text-[13px] text-on-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Turn 2: RAG Assistant Response with Structured Synthesis -->
+<div class="flex flex-col gap-space-sm pr-2">
+<!-- Agent Metadata Tag -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">· Grounded on Page 3</span>
+</div>
+<!-- Main Synthesis Content Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Based on <button class="inline-flex items-baseline px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-medium" onclick="toggleChunkPeek('chunk-3')">Attention_Is_All_You_Need.pdf § Page 3</button>, self-attention (or intra-attention) relates distinct positions of a single sequence to compute a contextual representation:
+        </p>
+<!-- Bullet Highlights -->
+<div class="flex flex-col gap-space-sm pl-1">
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Query, Key, Value Triplet:</strong> Every input token vector is projected into three distinct spaces via linear transformations: $Q$, $K$, and $V$.
+            </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Scaled Dot-Product:</strong> Calculates the dot product of $Q$ with $K^T$, scaled by $\sqrt{d_k}$ to prevent gradient vanishing in large dimensions.
+            </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Softmax Weighting:</strong> A softmax distribution is applied over the keys to output a weighted sum across all value vectors ($V$).
+            </p>
+</div>
+</div>
+<!-- Citation Pill Attached directly -->
+<div class="bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm" id="citation-card-3" onclick="toggleChunkPeek('chunk-3')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 font-bold">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf § p.3</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">97% Match</span>
+</div>
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-3">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EQUATION 1 RETRIEVAL EXTRACT</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cosine: 0.974</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic font-label-md">
+              "Attention(Q, K, V) = softmax((Q K^T) / sqrt(d_k)) V"
+            </p>
+</div>
+</div>
+<!-- Provenance Trace & Metrics -->
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Reciprocal Rank Fusion · Top 1 of 12 chunks</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Live Generation Indicator (Subtle Delight Moment) -->
+<div class="hidden flex items-center gap-2 px-space-sm py-1 text-on-surface-variant" id="streaming-indicator">
+<div class="flex gap-1 items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 0ms;"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 150ms;"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 300ms;"></span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Retrieving grounded vectors...</span>
+</div>
+</div>
+<!-- Bottom Workspace Area (Sticky above system nav) -->
+<div class="sticky bottom-0 bg-surface/90 backdrop-blur-xl px-margin pt-space-xs pb-space-sm space-y-space-sm shadow-[0_-4px_24px_rgba(0,0,0,0.03)] z-40">
+<!-- Quick Prompt Suggestions (Horizontal Flick Carousel) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Summarize key points of all 3 documents">
+<span class="material-symbols-outlined text-[15px] text-secondary">summarize</span>
+<span>Summarize key points</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Compare revenue vs expenses in Q3">
+<span class="material-symbols-outlined text-[15px] text-secondary">balance</span>
+<span>Compare revenue vs expenses</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Explain multi-head attention methodology in plain terms">
+<span class="material-symbols-outlined text-[15px] text-secondary">neurology</span>
+<span>Explain methodology</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Extract all financial tabular data">
+<span class="material-symbols-outlined text-[15px] text-secondary">table_chart</span>
+<span>Extract tables</span>
+</button>
+</div>
+<!-- Conversational Floating Prompt Bar -->
+<div class="bg-surface-container-lowest rounded-full p-1.5 shadow-md flex items-center gap-2 transition-all">
+<!-- Attachment / Ingest Trigger -->
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0 active:scale-90 transition-transform" id="upload-doc-btn" title="Attach PDF or Vectorize Context">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<!-- Main Input Field -->
+<input class="flex-1 bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60 px-1 py-1" id="prompt-input" placeholder="Ask anything about your PDFs..." type="text"/>
+<!-- Retrieved Context Peek Toggle (Learning Mode) -->
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:bg-secondary-fixed/50 shrink-0 transition-colors" id="context-mode-btn" title="Toggle Retrieved Context Mode">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<!-- Send Trigger Button -->
+<button class="w-9 h-9 rounded-full bg-primary hover:bg-inverse-surface flex items-center justify-center text-on-primary shrink-0 active:scale-95 transition-transform shadow-sm" id="send-btn">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+<!-- Learning Mode Mode Helper Indicator -->
+<div class="flex items-center justify-between px-2 pt-0.5 text-on-surface-variant font-label-sm text-label-sm" id="learning-indicator">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Context Inspection Enabled</span>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Top-k=4 · Temp=0.2</span>
+</div>
+</div>
+</div>
+<script>
+  // Chunk Peeker Toggle Interaction
+  function toggleChunkPeek(chunkId) {
+    const el = document.getElementById(chunkId);
+    if (!el) return;
+    if (el.classList.contains('hidden')) {
+      el.classList.remove('hidden');
+    } else {
+      el.classList.add('hidden');
+    }
+  }
+
+  function openInspector(chunkId) {
+    toggleChunkPeek(chunkId);
+    const target = document.getElementById(chunkId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  // Active Scope Drawer Toggle
+  const scopeBtn = document.getElementById('scope-toggle-btn');
+  const scopeDrawer = document.getElementById('scope-drawer');
+  const scopeClose = document.getElementById('scope-drawer-close');
+
+  if (scopeBtn && scopeDrawer) {
+    scopeBtn.addEventListener('click', () => {
+      scopeDrawer.classList.toggle('hidden');
+    });
+  }
+
+  if (scopeClose && scopeDrawer) {
+    scopeClose.addEventListener('click', () => {
+      scopeDrawer.classList.add('hidden');
+    });
+  }
+
+  // Prompt Suggestion Chips Auto-Fill
+  const promptInput = document.getElementById('prompt-input');
+  const promptChips = document.querySelectorAll('.prompt-chip');
+  promptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const text = chip.getAttribute('data-prompt');
+      if (promptInput && text) {
+        promptInput.value = text;
+        promptInput.focus();
+      }
+    });
+  });
+
+  // Context Learning Mode Switch
+  const contextModeBtn = document.getElementById('context-mode-btn');
+  const learningIndicator = document.getElementById('learning-indicator');
+  let contextEnabled = true;
+
+  if (contextModeBtn && learningIndicator) {
+    contextModeBtn.addEventListener('click', () => {
+      contextEnabled = !contextEnabled;
+      if (contextEnabled) {
+        learningIndicator.classList.remove('hidden');
+        contextModeBtn.classList.add('text-secondary');
+        contextModeBtn.classList.remove('text-on-surface-variant');
+      } else {
+        learningIndicator.classList.add('hidden');
+        contextModeBtn.classList.remove('text-secondary');
+        contextModeBtn.classList.add('text-on-surface-variant');
+      }
+    });
+  }
+
+  // Simple Send Query Mock Simulator
+  const sendBtn = document.getElementById('send-btn');
+  const streamInd = document.getElementById('streaming-indicator');
+  const chatStream = document.getElementById('chat-stream');
+
+  function submitQuery() {
+    if (!promptInput || !promptInput.value.trim()) return;
+    const query = promptInput.value.trim();
+    promptInput.value = '';
+
+    // Append User Message
+    const userWrap = document.createElement('div');
+    userWrap.className = 'flex justify-end pl-8';
+    userWrap.innerHTML = `
+      <div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+        <p class="font-body-md text-body-md leading-relaxed">${query}</p>
+        <div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+          <span class="font-label-sm text-label-sm text-on-primary">Just now</span>
+          <span class="material-symbols-outlined text-[13px] text-on-primary">schedule</span>
+        </div>
+      </div>
+    `;
+    chatStream.appendChild(userWrap);
+
+    // Show temporary streaming dot feedback
+    if (streamInd) {
+      streamInd.classList.remove('hidden');
+      chatStream.appendChild(streamInd);
+    }
+
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    setTimeout(() => {
+      if (streamInd) streamInd.classList.add('hidden');
+      
+      const botWrap = document.createElement('div');
+      botWrap.className = 'flex flex-col gap-space-sm pr-2';
+      botWrap.innerHTML = `
+        <div class="flex items-center gap-space-xs text-on-surface-variant">
+          <div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+          </div>
+          <span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium">· Vector Match 89%</span>
+        </div>
+        <div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+          <p class="font-body-md text-body-md leading-relaxed">
+            I examined the selected active scope against your query: <em>"${query}"</em>. In Q3_Financial_Summary.pdf § p.7, capital allocation shifted 18% toward accelerated GPU inference workloads.
+          </p>
+          <div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 truncate">
+              <span class="material-symbols-outlined text-secondary text-[16px]">description</span>
+              <span class="font-headline-sm text-headline-sm truncate">Q3_Financial_Summary.pdf § p.7</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-secondary font-semibold shrink-0">89% Match</span>
+          </div>
+        </div>
+      `;
+      chatStream.appendChild(botWrap);
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 1200);
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener('click', submitQuery);
+  }
+  if (promptInput) {
+    promptInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        submitQuery();
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-headline-sm scale-100"><div class="h-16 px-gutter flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="documents" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-label-sm text-label-sm mt-0.5">Documents</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm transition-all text-primary font-headline-sm scale-100" data-path="chat-&amp;-ask" href="#"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm mt-0.5">Chat &amp; Ask</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="insights-/-chunks" href="#"><span class="material-symbols-outlined text-[22px]">data_object</span><span class="font-label-sm text-label-sm mt-0.5">Insights / Chunks</span></a></div></nav></body></html>
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#46464b", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#1b1b1f", "tertiary-fixed": "#e3e1ef", "surface-variant": "#e3e2df", "primary-fixed": "#e3e2e6", "on-secondary-fixed": "#0c006b", "inverse-on-surface": "#f2f1ed", "on-error": "#ffffff", "on-secondary-container": "#fffbff", "on-background": "#1b1c1a", "tertiary-container": "#1a1b25", "secondary-fixed": "#e2dfff", "surface": "#faf9f5", "on-tertiary-container": "#83838f", "secondary-container": "#6462ec", "on-secondary-fixed-variant": "#332dbc", "surface-bright": "#faf9f5", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#464651", "background": "#faf9f5", "on-tertiary": "#ffffff", "inverse-surface": "#30312e", "error": "#ba1a1a", "on-tertiary-fixed": "#1a1b25", "outline": "#76777b", "on-surface": "#1b1c1a", "surface-container": "#efeeea", "surface-container-high": "#e9e8e4", "tertiary-fixed-dim": "#c7c5d3", "surface-container-low": "#f5f4f0", "on-primary-container": "#848387", "on-error-container": "#93000a", "inverse-primary": "#c7c6ca", "error-container": "#ffdad6", "surface-container-highest": "#e3e2df", "tertiary": "#000000", "on-primary-fixed-variant": "#46464a", "primary-fixed-dim": "#c7c6ca", "primary-container": "#1b1b1f", "on-primary": "#ffffff", "surface-tint": "#5e5e62", "surface-dim": "#dbdad6", "primary": "#000000", "secondary": "#4a47d2", "secondary-fixed-dim": "#c2c1ff", "outline-variant": "#c7c6cb" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1rem", "space-xl": "2.5rem", "gutter-tablet": "1.5rem", "gutter-desktop": "2rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem" }, "fontFamily": { "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="DocuMind Minimal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAfPWKYvjBPc5eOqKWVlYzUTbFm5hllVHxoBzPNfXnH_0gHIDLQ_kjwD907KcFrEowF1OOK-tLn3um3mKgzoVMo2lg9tCYrm3wOX1FDdoKWRK3Zk1UPO2F2VIjDUQnDY2miMquO8ntui0Jef5i9g9UIhnP4LtFUi9Ceyl95dAynLD0fy7svhfYD2V1PwQ3i7zr-gWcwXWCnhAh4f8bKAuOdtyjcKCtEibcOOZmNbiqaUA"/><div class="flex items-baseline gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Papyr</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline-block">/ Chat &amp; Ask</span></div></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">RAG Active</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Active Corpus Scope Bar -->
+<div class="px-margin py-space-sm bg-surface-container-low/80 backdrop-blur-md sticky top-0 z-30 flex items-center justify-between">
+<button class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-all text-left" id="scope-toggle-btn">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm">3 PDFs Active</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">84 Chunks</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-0.5">expand_more</span>
+</button>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm active:scale-90 transition-transform" id="rag-tuning-btn" title="Retriever Config">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm active:scale-90 transition-transform" id="clear-chat-btn" title="Clear History">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Scope Drawer Modal (Hidden by Default) -->
+<div class="hidden mx-margin my-space-sm p-space-md bg-surface-container-lowest rounded-lg shadow-md transition-all" id="scope-drawer">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">library_books</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Grounding Source Corpus</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" id="scope-drawer-close">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Q3_Financial_Summary.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">34pg · 92% rel</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">15pg · 88% rel</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-DEFAULT">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">SaaS_Enterprise_Metrics_2024.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">48pg · 54% rel</span>
+</div>
+</div>
+</div>
+<!-- Conversation Timeline Stream -->
+<div class="flex flex-col gap-space-lg px-margin pt-space-md pb-6" id="chat-stream">
+<!-- Turn 1: User Prompt -->
+<div class="flex justify-end pl-8">
+<div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+<p class="font-body-md text-body-md leading-relaxed">
+          What were the primary revenue drivers in Q3 according to the report?
+        </p>
+<div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+<span class="font-label-sm text-label-sm text-on-primary">10:42 AM</span>
+<span class="material-symbols-outlined text-[13px] text-on-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Turn 1: RAG Assistant Response -->
+<div class="flex flex-col gap-space-sm pr-2">
+<!-- Agent Metadata Tag -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">· 2 sources grounded</span>
+</div>
+<!-- Main Synthesis Content Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+          According to <button class="inline-flex items-baseline px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-medium hover:bg-secondary hover:text-on-secondary transition-colors" onclick="openInspector('chunk-1')">Q3_Financial_Summary.pdf (Page 4)</button>, the primary revenue growth was driven by enterprise subscription renewals (<strong class="font-semibold text-primary">up 34% YoY</strong>) and cross-selling AI add-on tiers to installed customers.
+        </p>
+<!-- Provenance Vector & Citations Section -->
+<div class="pt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">database</span>
+              Grounding Citations
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cosine Top-K</span>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- Citation 1: High Similarity -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm active:scale-[0.99]" id="citation-card-1" onclick="toggleChunkPeek('chunk-1')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 font-bold">1</span>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Q3_Financial_Summary.pdf</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Section 4.1 · Page 4</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">92% Match</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-secondary transition-colors">visibility</span>
+</div>
+</div>
+<!-- Collapsible Chunk Excerpt -->
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-1">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EMBEDDING VECTOR CHUNK #1084</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tokens: 142</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                  "...enterprise ARR crossed $42.1M driven by high net dollar retention (124%), predominantly propelled by tier migration toward autonomous intelligence licenses..."
+                </p>
+</div>
+</div>
+<!-- Citation 2: Cross Reference -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm active:scale-[0.99]" id="citation-card-2" onclick="toggleChunkPeek('chunk-2')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">2</span>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Background § Page 2</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">64% Match</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-secondary transition-colors">visibility</span>
+</div>
+</div>
+<!-- Collapsible Chunk Excerpt -->
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-2">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EMBEDDING VECTOR CHUNK #0492</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tokens: 98</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                  "...recurrent models typically factor computation along the symbol positions of the input and output sequences..."
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Latency & Model Diagnostic Footer -->
+<div class="flex items-center justify-between pt-2 text-on-surface-variant">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span>Hybrid Dense Search</span>
+<span>·</span>
+<span>340ms latency</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform" title="Copy Answer">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform" title="Good Response">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Divider with Document Context Reference -->
+<div class="relative py-1">
+<div class="flex items-center justify-center">
+<span class="bg-surface-container px-space-md py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">sync_alt</span>
+          Switched Attention Context: <strong>Attention_Is_All_You_Need.pdf</strong>
+</span>
+</div>
+</div>
+<!-- Turn 2: User Prompt -->
+<div class="flex justify-end pl-8">
+<div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+<p class="font-body-md text-body-md leading-relaxed">
+          Can you summarize how self-attention works based on the paper?
+        </p>
+<div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+<span class="font-label-sm text-label-sm text-on-primary">10:44 AM</span>
+<span class="material-symbols-outlined text-[13px] text-on-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Turn 2: RAG Assistant Response with Structured Synthesis -->
+<div class="flex flex-col gap-space-sm pr-2">
+<!-- Agent Metadata Tag -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">· Grounded on Page 3</span>
+</div>
+<!-- Main Synthesis Content Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Based on <button class="inline-flex items-baseline px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-medium" onclick="toggleChunkPeek('chunk-3')">Attention_Is_All_You_Need.pdf § Page 3</button>, self-attention (or intra-attention) relates distinct positions of a single sequence to compute a contextual representation:
+        </p>
+<!-- Bullet Highlights -->
+<div class="flex flex-col gap-space-sm pl-1">
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Query, Key, Value Triplet:</strong> Every input token vector is projected into three distinct spaces via linear transformations: $Q$, $K$, and $V$.
+            </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Scaled Dot-Product:</strong> Calculates the dot product of $Q$ with $K^T$, scaled by $\sqrt{d_k}$ to prevent gradient vanishing in large dimensions.
+            </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+<strong class="font-semibold text-primary">Softmax Weighting:</strong> A softmax distribution is applied over the keys to output a weighted sum across all value vectors ($V$).
+            </p>
+</div>
+</div>
+<!-- Citation Pill Attached directly -->
+<div class="bg-surface-container-low hover:bg-surface-container p-space-sm rounded-DEFAULT transition-all cursor-pointer shadow-sm" id="citation-card-3" onclick="toggleChunkPeek('chunk-3')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 font-bold">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Attention_Is_All_You_Need.pdf § p.3</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">97% Match</span>
+</div>
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface" id="chunk-3">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-secondary">EQUATION 1 RETRIEVAL EXTRACT</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cosine: 0.974</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic font-label-md">
+              "Attention(Q, K, V) = softmax((Q K^T) / sqrt(d_k)) V"
+            </p>
+</div>
+</div>
+<!-- Provenance Trace & Metrics -->
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Reciprocal Rank Fusion · Top 1 of 12 chunks</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Live Generation Indicator (Subtle Delight Moment) -->
+<div class="hidden flex items-center gap-2 px-space-sm py-1 text-on-surface-variant" id="streaming-indicator">
+<div class="flex gap-1 items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 0ms;"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 150ms;"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 300ms;"></span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Retrieving grounded vectors...</span>
+</div>
+</div>
+<!-- Bottom Workspace Area (Sticky above system nav) -->
+<div class="sticky bottom-0 bg-surface/90 backdrop-blur-xl px-margin pt-space-xs pb-space-sm space-y-space-sm shadow-[0_-4px_24px_rgba(0,0,0,0.03)] z-40">
+<!-- Quick Prompt Suggestions (Horizontal Flick Carousel) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Summarize key points of all 3 documents">
+<span class="material-symbols-outlined text-[15px] text-secondary">summarize</span>
+<span>Summarize key points</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Compare revenue vs expenses in Q3">
+<span class="material-symbols-outlined text-[15px] text-secondary">balance</span>
+<span>Compare revenue vs expenses</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Explain multi-head attention methodology in plain terms">
+<span class="material-symbols-outlined text-[15px] text-secondary">neurology</span>
+<span>Explain methodology</span>
+</button>
+<button class="prompt-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm shadow-sm active:scale-95 transition-all" data-prompt="Extract all financial tabular data">
+<span class="material-symbols-outlined text-[15px] text-secondary">table_chart</span>
+<span>Extract tables</span>
+</button>
+</div>
+<!-- Conversational Floating Prompt Bar -->
+<div class="bg-surface-container-lowest rounded-full p-1.5 shadow-md flex items-center gap-2 transition-all">
+<!-- Attachment / Ingest Trigger -->
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0 active:scale-90 transition-transform" id="upload-doc-btn" title="Attach PDF or Vectorize Context">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<!-- Main Input Field -->
+<input class="flex-1 bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60 px-1 py-1" id="prompt-input" placeholder="Ask anything about your PDFs..." type="text"/>
+<!-- Retrieved Context Peek Toggle (Learning Mode) -->
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:bg-secondary-fixed/50 shrink-0 transition-colors" id="context-mode-btn" title="Toggle Retrieved Context Mode">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<!-- Send Trigger Button -->
+<button class="w-9 h-9 rounded-full bg-primary hover:bg-inverse-surface flex items-center justify-center text-on-primary shrink-0 active:scale-95 transition-transform shadow-sm" id="send-btn">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+<!-- Learning Mode Mode Helper Indicator -->
+<div class="flex items-center justify-between px-2 pt-0.5 text-on-surface-variant font-label-sm text-label-sm" id="learning-indicator">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Context Inspection Enabled</span>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Top-k=4 · Temp=0.2</span>
+</div>
+</div>
+</div>
+<script>
+  // Chunk Peeker Toggle Interaction
+  function toggleChunkPeek(chunkId) {
+    const el = document.getElementById(chunkId);
+    if (!el) return;
+    if (el.classList.contains('hidden')) {
+      el.classList.remove('hidden');
+    } else {
+      el.classList.add('hidden');
+    }
+  }
+
+  function openInspector(chunkId) {
+    toggleChunkPeek(chunkId);
+    const target = document.getElementById(chunkId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  // Active Scope Drawer Toggle
+  const scopeBtn = document.getElementById('scope-toggle-btn');
+  const scopeDrawer = document.getElementById('scope-drawer');
+  const scopeClose = document.getElementById('scope-drawer-close');
+
+  if (scopeBtn && scopeDrawer) {
+    scopeBtn.addEventListener('click', () => {
+      scopeDrawer.classList.toggle('hidden');
+    });
+  }
+
+  if (scopeClose && scopeDrawer) {
+    scopeClose.addEventListener('click', () => {
+      scopeDrawer.classList.add('hidden');
+    });
+  }
+
+  // Prompt Suggestion Chips Auto-Fill
+  const promptInput = document.getElementById('prompt-input');
+  const promptChips = document.querySelectorAll('.prompt-chip');
+  promptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const text = chip.getAttribute('data-prompt');
+      if (promptInput && text) {
+        promptInput.value = text;
+        promptInput.focus();
+      }
+    });
+  });
+
+  // Context Learning Mode Switch
+  const contextModeBtn = document.getElementById('context-mode-btn');
+  const learningIndicator = document.getElementById('learning-indicator');
+  let contextEnabled = true;
+
+  if (contextModeBtn && learningIndicator) {
+    contextModeBtn.addEventListener('click', () => {
+      contextEnabled = !contextEnabled;
+      if (contextEnabled) {
+        learningIndicator.classList.remove('hidden');
+        contextModeBtn.classList.add('text-secondary');
+        contextModeBtn.classList.remove('text-on-surface-variant');
+      } else {
+        learningIndicator.classList.add('hidden');
+        contextModeBtn.classList.remove('text-secondary');
+        contextModeBtn.classList.add('text-on-surface-variant');
+      }
+    });
+  }
+
+  // Simple Send Query Mock Simulator
+  const sendBtn = document.getElementById('send-btn');
+  const streamInd = document.getElementById('streaming-indicator');
+  const chatStream = document.getElementById('chat-stream');
+
+  function submitQuery() {
+    if (!promptInput || !promptInput.value.trim()) return;
+    const query = promptInput.value.trim();
+    promptInput.value = '';
+
+    // Append User Message
+    const userWrap = document.createElement('div');
+    userWrap.className = 'flex justify-end pl-8';
+    userWrap.innerHTML = `
+      <div class="bg-primary text-on-primary px-space-md py-space-sm rounded-2xl rounded-br-sm shadow-sm max-w-[90%]">
+        <p class="font-body-md text-body-md leading-relaxed">${query}</p>
+        <div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+          <span class="font-label-sm text-label-sm text-on-primary">Just now</span>
+          <span class="material-symbols-outlined text-[13px] text-on-primary">schedule</span>
+        </div>
+      </div>
+    `;
+    chatStream.appendChild(userWrap);
+
+    // Show temporary streaming dot feedback
+    if (streamInd) {
+      streamInd.classList.remove('hidden');
+      chatStream.appendChild(streamInd);
+    }
+
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    setTimeout(() => {
+      if (streamInd) streamInd.classList.add('hidden');
+      
+      const botWrap = document.createElement('div');
+      botWrap.className = 'flex flex-col gap-space-sm pr-2';
+      botWrap.innerHTML = `
+        <div class="flex items-center gap-space-xs text-on-surface-variant">
+          <div class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+          </div>
+          <span class="font-headline-sm text-headline-sm text-on-surface">Papyr Synthesizer</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium">· Vector Match 89%</span>
+        </div>
+        <div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-space-md text-on-surface">
+          <p class="font-body-md text-body-md leading-relaxed">
+            I examined the selected active scope against your query: <em>"${query}"</em>. In Q3_Financial_Summary.pdf § p.7, capital allocation shifted 18% toward accelerated GPU inference workloads.
+          </p>
+          <div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 truncate">
+              <span class="material-symbols-outlined text-secondary text-[16px]">description</span>
+              <span class="font-headline-sm text-headline-sm truncate">Q3_Financial_Summary.pdf § p.7</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-secondary font-semibold shrink-0">89% Match</span>
+          </div>
+        </div>
+      `;
+      chatStream.appendChild(botWrap);
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 1200);
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener('click', submitQuery);
+  }
+  if (promptInput) {
+    promptInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        submitQuery();
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-headline-sm scale-100"><div class="h-16 px-gutter flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="documents" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-label-sm text-label-sm mt-0.5">Documents</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm transition-all text-primary font-headline-sm scale-100" data-path="chat-&amp;-ask" href="#"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm mt-0.5">Chat &amp; Ask</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="insights-/-chunks" href="#"><span class="material-symbols-outlined text-[22px]">data_object</span><span class="font-label-sm text-label-sm mt-0.5">Insights / Chunks</span></a></div></nav></body></html>
