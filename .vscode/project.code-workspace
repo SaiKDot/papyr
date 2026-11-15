@@ -1,0 +1,22 @@
+{
+    "folders": [
+        {
+            "name": "ROOT",
+            "path": "../"
+        },
+        {
+            "name": "UI",
+            "path": "../apps/ui"
+        },
+        {
+            "name": "Python",
+            "path": "../apps/web"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "node_modules/": true,
+            "apps/": true
+        }
+    }
+}

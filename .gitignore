@@ -82,5 +82,5 @@ htmlcov/
 # OS & Editor files
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
+!.vscode/project.code-workspace
